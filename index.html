@@ -13,7 +13,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: #333;
             min-height: 100vh;
             padding: 20px;
@@ -23,12 +23,12 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.97);
             border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
             margin-top: 20px;
         }
 
@@ -40,61 +40,97 @@
 
         h1 {
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
             margin-bottom: 10px;
-            font-size: 2.8rem;
+            font-size: 3rem;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .subtitle {
             color: #e0f7fa;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
         }
 
         .stats {
             display: flex;
             justify-content: space-around;
-            background-color: #e3f2fd;
-            padding: 15px;
+            flex-wrap: wrap;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 20px;
             border-radius: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            font-size: 1.2rem;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            gap: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            min-width: 150px;
         }
 
         .question-box {
             background-color: #f8fdff;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-left: 6px solid #2196f3;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 8px solid #2196f3;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #2196f3, #21cbf3);
         }
 
         .question {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
             color: #1565c0;
-            line-height: 1.4;
+            line-height: 1.5;
+            font-weight: 600;
         }
 
         .formula {
             font-family: 'Times New Roman', serif;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             text-align: center;
-            padding: 15px;
-            background-color: #f1f8ff;
-            border-radius: 10px;
-            margin: 15px 0;
-            border: 2px dashed #90caf9;
+            padding: 20px;
+            background: linear-gradient(135deg, #f1f8ff, #e3f2fd);
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 3px solid #90caf9;
+            box-shadow: 0 5px 10px rgba(144, 202, 249, 0.3);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .options {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 20px;
+            margin-top: 25px;
         }
 
         @media (min-width: 768px) {
@@ -104,30 +140,49 @@
         }
 
         .option {
-            padding: 18px;
-            background-color: #e3f2fd;
-            border-radius: 12px;
+            padding: 22px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 15px;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             transition: all 0.3s ease;
             text-align: center;
-            border: 2px solid transparent;
+            border: 3px solid transparent;
+            font-family: 'Times New Roman', serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .option:hover::before {
+            left: 100%;
         }
 
         .option:hover {
-            background-color: #bbdefb;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #bbdefb, #90caf9);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            border-color: #2196f3;
         }
 
         .option.correct {
-            background-color: #c8e6c9;
+            background: linear-gradient(135deg, #c8e6c9, #a5d6a7);
             border-color: #4caf50;
             color: #2e7d32;
         }
 
         .option.incorrect {
-            background-color: #ffcdd2;
+            background: linear-gradient(135deg, #ffcdd2, #ef9a9a);
             border-color: #f44336;
             color: #c62828;
         }
@@ -135,132 +190,218 @@
         .controls {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 20px;
-            margin-top: 30px;
+            margin-top: 35px;
         }
 
         button {
-            padding: 15px 30px;
-            font-size: 1.1rem;
+            padding: 18px 35px;
+            font-size: 1.2rem;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
             font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            min-width: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        button:hover::before {
+            left: 100%;
         }
 
         #next-btn {
-            background-color: #2196f3;
+            background: linear-gradient(135deg, #2196f3, #21cbf3);
             color: white;
         }
 
         #next-btn:hover {
-            background-color: #0d8bf2;
-            transform: translateY(-3px);
+            background: linear-gradient(135deg, #0d8bf2, #00bcd4);
+            transform: translateY(-5px) scale(1.05);
         }
 
         #reset-btn {
-            background-color: #ff9800;
+            background: linear-gradient(135deg, #ff9800, #ffb74d);
             color: white;
         }
 
         #reset-btn:hover {
-            background-color: #f57c00;
-            transform: translateY(-3px);
+            background: linear-gradient(135deg, #f57c00, #ffa726);
+            transform: translateY(-5px) scale(1.05);
         }
 
         #show-answer {
-            background-color: #9c27b0;
+            background: linear-gradient(135deg, #9c27b0, #ba68c8);
             color: white;
         }
 
         #show-answer:hover {
-            background-color: #7b1fa2;
-            transform: translateY(-3px);
+            background: linear-gradient(135deg, #7b1fa2, #ab47bc);
+            transform: translateY(-5px) scale(1.05);
         }
 
         .result {
             text-align: center;
-            font-size: 1.3rem;
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 10px;
+            font-size: 1.5rem;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 12px;
             display: none;
+            animation: fadeIn 0.5s ease;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .result.correct {
-            background-color: #e8f5e9;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
             color: #2e7d32;
-            border: 2px solid #4caf50;
+            border: 3px solid #4caf50;
         }
 
         .result.incorrect {
-            background-color: #ffebee;
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
             color: #c62828;
-            border: 2px solid #f44336;
+            border: 3px solid #f44336;
         }
 
         .explanation {
-            margin-top: 15px;
-            font-size: 1.1rem;
-            color: #555;
-            padding: 15px;
-            background-color: #fff9c4;
-            border-radius: 10px;
-            border-left: 4px solid #ffd600;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff9c4, #fff59d);
+            border-radius: 12px;
+            border-left: 6px solid #ffd600;
+            display: none;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .topic-label {
             display: inline-block;
-            background-color: #e0f7fa;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
             font-weight: bold;
             color: #006064;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 150, 136, 0.2);
+        }
+
+        .units {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .hint {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+            text-align: center;
+            font-style: italic;
         }
 
         footer {
             margin-top: 40px;
             text-align: center;
             color: white;
-            font-size: 0.9rem;
-            opacity: 0.8;
+            font-size: 1rem;
+            opacity: 0.9;
             width: 100%;
+            padding: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50, #8bc34a);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .difficulty {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #ff9800;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>📚 Опросник по молекулярной физике</h1>
+        <h1>🧪 Опросник по молекулярной физике</h1>
     </header>
 
     <div class="container">
         <div class="stats">
-            <div>Вопрос: <span id="question-counter">1</span>/<span id="total-questions">10</span></div>
-            <div>Правильно: <span id="correct-count">0</span></div>
-            <div>Неправильно: <span id="incorrect-count">0</span></div>
-            <div>Точность: <span id="accuracy">0%</span></div>
+            <div class="stat-item">Вопрос: <span id="question-counter">1</span>/<span id="total-questions">10</span></div>
+            <div class="stat-item">Правильно: <span id="correct-count">0</span></div>
+            <div class="stat-item">Неправильно: <span id="incorrect-count">0</span></div>
+            <div class="stat-item">Точность: <span id="accuracy">0%</span></div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress" id="progress-bar"></div>
         </div>
 
         <div class="question-box">
+            <div class="difficulty" id="difficulty">Средний</div>
             <div class="topic-label" id="topic-label">МКТ</div>
             <div class="question" id="question-text">Загрузка вопроса...</div>
+            
             <div class="formula" id="formula-display"></div>
+            <div class="hint" id="hint-text"></div>
             
             <div class="options" id="options-container">
+                <!-- Варианты ответов будут генерироваться здесь -->
             </div>
             
             <div class="result" id="result-message"></div>
-            <div class="explanation" id="explanation" style="display: none;"></div>
+            <div class="explanation" id="explanation"></div>
         </div>
 
         <div class="controls">
-            <button id="show-answer">Показать ответ</button>
-            <button id="next-btn">Следующий вопрос</button>
-            <button id="reset-btn">Начать заново</button>
+            <button id="show-answer">🔍 Показать ответ</button>
+            <button id="next-btn">➡ Следующий вопрос</button>
+            <button id="reset-btn">🔄 Начать заново</button>
         </div>
     </div>
 
@@ -269,131 +410,175 @@
     </footer>
 
     <script>
-
+        // База данных формул с единицами измерения
         const formulas = [
+            // Основное уравнение МКТ
             {
-                question: "Формула молярной массы через массу молекулы",
-                formula: "M = m₀N_A",
-                topic: "МКТ",
-                explanation: "Молярная масса равна произведению массы одной молекулы на число Авогадро."
+                question: "Основное уравнение молекулярно-кинетической теории",
+                formula: "p = (1/3) m₀ n v²",
+                units: "p [Па], m₀ [кг], n [м⁻³], v² [м²/с²]",
+                topic: "Основное уравнение МКТ",
+                explanation: "Давление идеального газа равно одной трети произведения массы молекулы, концентрации молекул и среднего квадрата скорости.",
+                difficulty: "Высокий"
             },
             {
-                question: "Формула массы молекулы",
-                formula: "m₀ = M/N_A",
-                topic: "МКТ",
-                explanation: "Масса одной молекулы равна молярной массе, деленной на число Авогадро."
-            },
-            {
-                question: "Формула количества вещества",
-                formula: "ν = N/N_A = m/M",
-                topic: "МКТ",
-                explanation: "Количество вещества равно отношению числа молекул к числу Авогадро или массе к молярной массе."
-            },
-            {
-                question: "Формула числа молекул",
-                formula: "N = (m/M)N_A = νN_A",
-                topic: "МКТ",
-                explanation: "Число молекул равно произведению количества вещества на число Авогадро."
-            },
-            {
-                question: "Формула концентрации молекул",
-                formula: "n = N/V",
-                topic: "МКТ",
-                explanation: "Концентрация молекул равна отношению числа молекул к объему."
+                question: "Уравнение состояния идеального газа (через концентрацию)",
+                formula: "p = n k T",
+                units: "p [Па], n [м⁻³], k [Дж/К], T [К]",
+                topic: "Основное уравнение МКТ",
+                explanation: "Давление пропорционально концентрации молекул, постоянной Больцмана и абсолютной температуре.",
+                difficulty: "Средний"
             },
             
+            // Масса и концентрация
             {
-                question: "уравнение МКТ через концентрацию и энергию",
-                formula: "p = (2/3)nE_k",
-                topic: "Основное уравнение МКТ",
-                explanation: "Давление идеального газа равно двум третям произведения концентрации молекул на среднюю кинетическую энергию."
+                question: "Масса одной молекулы через молярную массу",
+                formula: "m₀ = μ / N_A",
+                units: "m₀ [кг], μ [кг/моль], N_A [моль⁻¹]",
+                topic: "Масса молекулы",
+                explanation: "Масса одной молекулы равна молярной массе, деленной на число Авогадро (6.022×10²³ моль⁻¹).",
+                difficulty: "Легкий"
             },
             {
-                question: "уравнение МКТ через концентрацию и температуру",
-                formula: "p = nkT",
-                topic: "Основное уравнение МКТ",
-                explanation: "Давление идеального газа равно произведению концентрации молекул, постоянной Больцмана и температуры."
+                question: "Концентрация молекул",
+                formula: "n = N / V",
+                units: "n [м⁻³], N [шт], V [м³]",
+                topic: "Концентрация",
+                explanation: "Концентрация — это количество молекул в единице объема.",
+                difficulty: "Легкий"
+            },
+            
+            // Энергия и давление
+            {
+                question: "Средняя кинетическая энергия молекулы одноатомного газа",
+                formula: "Ē_k = (3/2) k T",
+                units: "Ē_k [Дж], k [Дж/К], T [К]",
+                topic: "Средняя кинетическая энергия",
+                explanation: "Средняя кинетическая энергия молекулы одноатомного идеального газа пропорциональна абсолютной температуре.",
+                difficulty: "Средний"
             },
             {
-                question: "Основное уравнение МКТ",
-                formula: "p = (1/3)m₀nv²",
-                topic: "Основное уравнение МКТ",
-                explanation: "Давление идеального газа равно одной трети произведения массы молекулы, концентрации и квадрата скорости."
+                question: "Средняя кинетическая энергия молекулы двухатомного газа",
+                formula: "Ē_k = (5/2) k T",
+                units: "Ē_k [Дж], k [Дж/К], T [К]",
+                topic: "Средняя кинетическая энергия",
+                explanation: "Для двухатомного газа учитываются дополнительные степени свободы вращения.",
+                difficulty: "Высокий"
             },
             {
-                question: "Формула средней кинетической энергии молекулы",
-                formula: "E_k = (3/2)kT = m₀v²/2",
+                question: "Связь давления со средней кинетической энергией",
+                formula: "p = (2/3) n Ē_k",
+                units: "p [Па], n [м⁻³], Ē_k [Дж]",
                 topic: "Основное уравнение МКТ",
-                explanation: "Средняя кинетическая энергия молекулы идеального газа равна трем вторым произведения постоянной Больцмана на температуру."
+                explanation: "Давление равно двум третям произведения концентрации на среднюю кинетическую энергию молекулы.",
+                difficulty: "Средний"
+            },
+            
+            // Скорость
+            {
+                question: "Среднеквадратичная скорость молекул (через температуру)",
+                formula: "v_скв = √(3kT/m₀)",
+                units: "v_скв [м/с], k [Дж/К], T [К], m₀ [кг]",
+                topic: "Среднеквадратичная скорость",
+                explanation: "Среднеквадратичная скорость пропорциональна квадратному корню из температуры и обратно пропорциональна массе молекулы.",
+                difficulty: "Средний"
             },
             {
-                question: "Формула средней квадратичной скорости",
-                formula: "v² = 3kT/m₀",
-                topic: "Основное уравнение МКТ",
-                explanation: "Квадрат средней квадратичной скорости молекул равен отношению трех произведений постоянной Больцмана на температуру к массе молекулы."
+                question: "Среднеквадратичная скорость (через молярную массу)",
+                formula: "v_скв = √(3RT/μ)",
+                units: "v_скв [м/с], R [Дж/(моль·К)], T [К], μ [кг/моль]",
+                topic: "Среднеквадратичная скорость",
+                explanation: "Альтернативная формула через универсальную газовую постоянную и молярную массу.",
+                difficulty: "Высокий"
+            },
+            
+            // Уравнения состояния
+            {
+                question: "Уравнение Менделеева-Клапейрона",
+                formula: "pV = (m/μ) R T",
+                units: "p [Па], V [м³], m [кг], μ [кг/моль], R [Дж/(моль·К)], T [К]",
+                topic: "Уравнение состояния",
+                explanation: "Основное уравнение состояния идеального газа, связывающее давление, объем, массу и температуру.",
+                difficulty: "Средний"
             },
             {
-                question: "Первый газовый закон (Бойля-Мариотта) - изотермический процесс",
+                question: "Уравнение Менделеева-Клапейрона (через количество вещества)",
+                formula: "pV = ν R T",
+                units: "p [Па], V [м³], ν [моль], R [Дж/(моль·К)], T [К]",
+                topic: "Уравнение состояния",
+                explanation: "Запись уравнения через количество вещества ν = m/μ.",
+                difficulty: "Средний"
+            },
+            
+            // Газовые законы
+            {
+                question: "Закон Бойля-Мариотта (изотермический процесс)",
                 formula: "p₁V₁ = p₂V₂",
+                units: "p [Па], V [м³]",
                 topic: "Газовые законы",
-                explanation: "Для изотермического процесса (T=const) произведение давления на объем постоянно."
+                explanation: "При постоянной температуре произведение давления на объем постоянно.",
+                difficulty: "Легкий"
             },
             {
-                question: "Второй газовый закон (Шарля) - изохорный процесс",
+                question: "Закон Шарля (изохорный процесс)",
                 formula: "p₁/T₁ = p₂/T₂",
+                units: "p [Па], T [К]",
                 topic: "Газовые законы",
-                explanation: "Для изохорного процесса (V=const) отношение давления к температуре постоянно."
+                explanation: "При постоянном объеме давление газа прямо пропорционально абсолютной температуре.",
+                difficulty: "Легкий"
             },
             {
-                question: "Третий газовый закон (Гей-Люссака) - изобарный процесс",
+                question: "Закон Гей-Люссака (изобарный процесс)",
                 formula: "V₁/T₁ = V₂/T₂",
+                units: "V [м³], T [К]",
                 topic: "Газовые законы",
-                explanation: "Для изобарного процесса (p=const) отношение объема к температуре постоянно."
+                explanation: "При постоянном давлении объем газа прямо пропорционален абсолютной температуре.",
+                difficulty: "Легкий"
             },
             {
-                question: "Уравнение состояния идеального газа (универсальное)",
-                formula: "pV = νRT",
-                topic: "Уравнение состояния",
-                explanation: "Уравнение Менделеева-Клапейрона: произведение давления на объем равно произведению количества вещества, универсальной газовой постоянной и температуры."
+                question: "Уравнение Клапейрона (объединенный газовый закон)",
+                formula: "p₁V₁/T₁ = p₂V₂/T₂",
+                units: "p [Па], V [м³], T [К]",
+                topic: "Газовые законы",
+                explanation: "Соотношение между давлением, объемом и температурой для фиксированной массы газа.",
+                difficulty: "Средний"
             },
-            {
-                question: "Уравнение состояния через массу и молярную массу",
-                formula: "pV = (m/M)RT",
-                topic: "Уравнение состояния",
-                explanation: "Уравнение состояния идеального газа, выраженное через массу газа и его молярную массу."
-            },
-            {
-                question: "Формула плотности идеального газа",
-                formula: "ρ = m/V = pM/(RT)",
-                topic: "Уравнение состояния",
-                explanation: "Плотность идеального газа равна отношению давления и молярной массы к произведению газовой постоянной и температуры."
-            },
-            {
-                question: "Формула молярной массы через параметры состояния",
-                formula: "M = mRT₀/(V₀p₀)",
-                topic: "Уравнение состояния",
-                explanation: "Молярная масса может быть определена через массу газа и его параметры при нормальных условиях."
-            },
-            {
-                question: "Формула объема через параметры состояния",
-                formula: "V = mRT/(Mp)",
-                topic: "Уравнение состояния",
-                explanation: "Объем газа можно выразить через его массу, температуру, молярную массу и давление."
-            },
+            
+            // Константы и преобразования
             {
                 question: "Связь универсальной газовой постоянной и постоянной Больцмана",
-                formula: "R = N_Ak",
-                topic: "Уравнение состояния",
-                explanation: "Универсальная газовая постоянная равна произведению числа Авогадро на постоянную Больцмана."
+                formula: "R = N_A k",
+                units: "R [Дж/(моль·К)], N_A [моль⁻¹], k [Дж/К]",
+                topic: "Константы",
+                explanation: "Универсальная газовая постоянная равна произведению числа Авогадро на постоянную Больцмана.",
+                difficulty: "Средний"
+            },
+            {
+                question: "Связь температур в шкалах Цельсия и Кельвина",
+                formula: "T(K) = t(°C) + 273",
+                units: "T [К], t [°C]",
+                topic: "Константы",
+                explanation: "Для перевода градусов Цельсия в Кельвины нужно прибавить 273.",
+                difficulty: "Легкий"
             }
         ];
 
+        // Единицы измерения давления
+        const pressureUnits = [
+            "1 атм = 10⁵ Па (приблизительно)",
+            "760 мм.рт.ст. = 1 атм",
+            "1 мм.рт.ст. ≈ 133.3 Па"
+        ];
+
+        // Элементы DOM
         const questionText = document.getElementById('question-text');
         const formulaDisplay = document.getElementById('formula-display');
+        const hintText = document.getElementById('hint-text');
         const optionsContainer = document.getElementById('options-container');
         const resultMessage = document.getElementById('result-message');
         const explanationEl = document.getElementById('explanation');
         const topicLabel = document.getElementById('topic-label');
+        const difficultyEl = document.getElementById('difficulty');
         
         const questionCounter = document.getElementById('question-counter');
         const totalQuestions = document.getElementById('total-questions');
@@ -401,11 +586,13 @@
         const incorrectCountEl = document.getElementById('incorrect-count');
         const accuracyEl = document.getElementById('accuracy');
         const formulaCountEl = document.getElementById('formula-count');
+        const progressBar = document.getElementById('progress-bar');
         
         const nextBtn = document.getElementById('next-btn');
         const resetBtn = document.getElementById('reset-btn');
         const showAnswerBtn = document.getElementById('show-answer');
 
+        // Переменные состояния
         let currentQuestionIndex = 0;
         let correctCount = 0;
         let incorrectCount = 0;
@@ -414,6 +601,7 @@
         let usedIndices = new Set();
         let isAnswered = false;
 
+        // Инициализация
         function init() {
             formulaCountEl.textContent = formulas.length;
             totalQuestions.textContent = "10";
@@ -421,18 +609,22 @@
             updateStats();
         }
 
+        // Генерация случайного вопроса
         function generateQuestion() {
-
+            // Сброс состояния
             isAnswered = false;
             resultMessage.style.display = 'none';
             explanationEl.style.display = 'none';
             optionsContainer.innerHTML = '';
             nextBtn.disabled = true;
-
+            hintText.textContent = "";
+            
+            // Если все вопросы использованы, сбрасываем
             if (usedIndices.size >= formulas.length) {
                 usedIndices.clear();
             }
-
+            
+            // Выбираем случайный вопрос, который еще не использовался
             let randomIndex;
             do {
                 randomIndex = Math.floor(Math.random() * formulas.length);
@@ -442,95 +634,153 @@
             currentQuestion = formulas[randomIndex];
             currentQuestionIndex = usedIndices.size;
             
-
+            // Обновляем интерфейс
             questionCounter.textContent = currentQuestionIndex;
             questionText.textContent = currentQuestion.question;
-            formulaDisplay.textContent = ""; 
+            formulaDisplay.textContent = ""; // Скрываем формулу
             topicLabel.textContent = currentQuestion.topic;
-
+            difficultyEl.textContent = currentQuestion.difficulty;
+            
+            // Цвет сложности
+            if (currentQuestion.difficulty === "Легкий") {
+                difficultyEl.style.backgroundColor = "#4caf50";
+            } else if (currentQuestion.difficulty === "Средний") {
+                difficultyEl.style.backgroundColor = "#ff9800";
+            } else {
+                difficultyEl.style.backgroundColor = "#f44336";
+            }
+            
+            // Обновляем прогресс-бар
+            progressBar.style.width = `${(currentQuestionIndex / 10) * 100}%`;
+            
+            // Добавляем подсказку об единицах измерения для 30% вопросов
+            if (Math.random() < 0.3) {
+                hintText.textContent = "Внимание: помните о единицах измерения!";
+                hintText.style.color = "#ff9800";
+            }
+            
+            // Генерируем варианты ответов
             generateOptions(randomIndex);
         }
 
+        // Генерация вариантов ответов
         function generateOptions(correctIndex) {
-
+            // Собираем массив индексов для неправильных ответов
             const wrongIndices = [];
             const allIndices = [...Array(formulas.length).keys()];
             
-
+            // Ищем формулы из той же темы для неправильных ответов
             const sameTopicIndices = allIndices.filter(i => 
                 i !== correctIndex && formulas[i].topic === formulas[correctIndex].topic
             );
-
+            
+            // Если есть формулы из той же темы, берем их
             if (sameTopicIndices.length >= 3) {
-
+                // Берем 3 случайные формулы из той же темы
                 while (wrongIndices.length < 3 && sameTopicIndices.length > 0) {
                     const randomIndex = Math.floor(Math.random() * sameTopicIndices.length);
                     wrongIndices.push(sameTopicIndices.splice(randomIndex, 1)[0]);
                 }
             }
-
+            
+            // Если не хватает, добавляем случайные формулы из других тем
             while (wrongIndices.length < 3) {
                 const randomIndex = Math.floor(Math.random() * formulas.length);
                 if (randomIndex !== correctIndex && !wrongIndices.includes(randomIndex)) {
                     wrongIndices.push(randomIndex);
                 }
             }
-
+            
+            // Создаем массив всех вариантов ответов
             const options = [
-                { formula: formulas[correctIndex].formula, isCorrect: true },
+                { 
+                    formula: formulas[correctIndex].formula, 
+                    units: formulas[correctIndex].units,
+                    isCorrect: true 
+                },
                 ...wrongIndices.map(index => ({ 
                     formula: formulas[index].formula, 
+                    units: formulas[index].units,
                     isCorrect: false 
                 }))
             ];
-
+            
+            // Перемешиваем варианты ответов
             shuffleArray(options);
             
-
+            // Отображаем варианты
             options.forEach(option => {
                 const optionEl = document.createElement('div');
                 optionEl.className = 'option';
-                optionEl.textContent = option.formula;
+                
+                const formulaSpan = document.createElement('div');
+                formulaSpan.textContent = option.formula;
+                formulaSpan.style.fontSize = '1.8rem';
+                formulaSpan.style.marginBottom = '8px';
+                
+                const unitsSpan = document.createElement('div');
+                unitsSpan.className = 'units';
+                unitsSpan.textContent = option.units;
+                
+                optionEl.appendChild(formulaSpan);
+                optionEl.appendChild(unitsSpan);
+                
                 optionEl.addEventListener('click', () => checkAnswer(optionEl, option.isCorrect));
                 optionsContainer.appendChild(optionEl);
             });
         }
 
+        // Проверка ответа
         function checkAnswer(optionEl, isCorrect) {
             if (isAnswered) return;
             
             isAnswered = true;
             totalAnswered++;
-
+            
+            // Показываем правильный ответ
             const allOptions = document.querySelectorAll('.option');
             allOptions.forEach(opt => {
                 opt.classList.remove('correct', 'incorrect');
-                if (opt.textContent === currentQuestion.formula) {
+                const formulaText = opt.querySelector('div:first-child').textContent;
+                if (formulaText === currentQuestion.formula) {
                     opt.classList.add('correct');
                 }
             });
-
+            
+            // Отмечаем выбранный ответ
             if (isCorrect) {
                 optionEl.classList.add('correct');
                 correctCount++;
-                resultMessage.textContent = "Правильно! ✓";
+                resultMessage.textContent = "✓ Правильно! Отличная работа!";
                 resultMessage.className = "result correct";
+                
+                // Иногда добавляем дополнительную информацию
+                if (Math.random() < 0.3 && pressureUnits.length > 0) {
+                    const randomUnit = pressureUnits[Math.floor(Math.random() * pressureUnits.length)];
+                    explanationEl.innerHTML = `${currentQuestion.explanation}<br><br><strong>Дополнительно:</strong> ${randomUnit}`;
+                } else {
+                    explanationEl.textContent = currentQuestion.explanation;
+                }
             } else {
                 optionEl.classList.add('incorrect');
                 incorrectCount++;
-                resultMessage.textContent = "Неправильно ✗";
+                resultMessage.textContent = "✗ Неправильно. Изучите объяснение ниже.";
                 resultMessage.className = "result incorrect";
+                explanationEl.textContent = currentQuestion.explanation;
             }
-
-            explanationEl.textContent = currentQuestion.explanation;
+            
+            // Показываем объяснение и результат
             explanationEl.style.display = 'block';
             resultMessage.style.display = 'block';
-
+            
+            // Активируем кнопку "Далее"
             nextBtn.disabled = false;
-
+            
+            // Обновляем статистику
             updateStats();
         }
 
+        // Обновление статистики
         function updateStats() {
             correctCountEl.textContent = correctCount;
             incorrectCountEl.textContent = incorrectCount;
@@ -538,8 +788,18 @@
             const total = correctCount + incorrectCount;
             const accuracy = total > 0 ? Math.round((correctCount / total) * 100) : 0;
             accuracyEl.textContent = `${accuracy}%`;
+            
+            // Цвет точности
+            if (accuracy >= 80) {
+                accuracyEl.style.color = "#4caf50";
+            } else if (accuracy >= 60) {
+                accuracyEl.style.color = "#ff9800";
+            } else {
+                accuracyEl.style.color = "#f44336";
+            }
         }
 
+        // Перемешивание массива
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -548,9 +808,27 @@
             return array;
         }
 
+        // Обработчики событий
         nextBtn.addEventListener('click', () => {
             if (usedIndices.size >= 10) {
-                alert(`Тест завершен!\n\nПравильных ответов: ${correctCount}\nНеправильных: ${incorrectCount}\nТочность: ${Math.round((correctCount / 10) * 100)}%`);
+                // Если прошли 10 вопросов, показываем итог
+                const finalAccuracy = Math.round((correctCount / 10) * 100);
+                let message = `🎉 Тест завершен!\n\n`;
+                message += `Правильных ответов: ${correctCount}/10\n`;
+                message += `Неправильных: ${incorrectCount}\n`;
+                message += `Точность: ${finalAccuracy}%\n\n`;
+                
+                if (finalAccuracy >= 90) {
+                    message += `Отличный результат! Вы прекрасно знаете формулы! 🥇`;
+                } else if (finalAccuracy >= 70) {
+                    message += `Хороший результат! Продолжайте практиковаться! 🥈`;
+                } else if (finalAccuracy >= 50) {
+                    message += `Неплохо, но есть куда расти! 🥉`;
+                } else {
+                    message += `Вам нужно повторить материал. Удачи в следующий раз! 📚`;
+                }
+                
+                alert(message);
                 resetQuiz();
             } else {
                 generateQuestion();
@@ -561,41 +839,51 @@
 
         showAnswerBtn.addEventListener('click', () => {
             if (currentQuestion && !isAnswered) {
- 
+                // Показываем правильный ответ
                 formulaDisplay.textContent = currentQuestion.formula;
-                explanationEl.textContent = currentQuestion.explanation;
+                formulaDisplay.style.backgroundColor = "#e8f5e9";
+                formulaDisplay.style.borderColor = "#4caf50";
+                
+                explanationEl.textContent = `${currentQuestion.explanation}\n\nЕдиницы измерения: ${currentQuestion.units}`;
                 explanationEl.style.display = 'block';
                 
-
+                // Подсвечиваем правильный ответ
                 const allOptions = document.querySelectorAll('.option');
                 allOptions.forEach(opt => {
-                    if (opt.textContent === currentQuestion.formula) {
+                    const formulaText = opt.querySelector('div:first-child').textContent;
+                    if (formulaText === currentQuestion.formula) {
                         opt.classList.add('correct');
                     }
                 });
                 
-
+                // Делаем кнопки неактивными
                 const optionElements = document.querySelectorAll('.option');
                 optionElements.forEach(opt => {
                     opt.style.pointerEvents = 'none';
                 });
+                
+                // Показываем подсказку
+                hintText.textContent = "Ответ показан. Изучите формулу и объяснение.";
+                hintText.style.color = "#4caf50";
                 
                 isAnswered = true;
                 nextBtn.disabled = false;
             }
         });
 
+        // Сброс теста
         function resetQuiz() {
             correctCount = 0;
             incorrectCount = 0;
             totalAnswered = 0;
             usedIndices.clear();
+            progressBar.style.width = "0%";
             updateStats();
             generateQuestion();
         }
 
+        // Запуск при загрузке страницы
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
-
 </html>
